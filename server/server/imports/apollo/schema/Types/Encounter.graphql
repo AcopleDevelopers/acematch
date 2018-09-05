@@ -1,0 +1,6 @@
+type Encounter {
+  _id: ID
+  userId: ID
+  matchId: ID
+  date: Date
+}

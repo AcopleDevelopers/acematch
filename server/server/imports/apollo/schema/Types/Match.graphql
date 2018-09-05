@@ -1,0 +1,51 @@
+type Match {
+  _id: ID
+  firstPlayer: ID
+  secondPlayer: ID
+  date: Date
+  clubId: ID
+  playfieldId: ID
+  timeblockId: ID
+  createdAt: Date
+  result: [MatchResult]
+  club: Club
+  playfield: Playfield
+  timeblock: Timeblock
+  firstPlayerName: String
+  secondPlayerName: String
+  information: Information
+}
+
+type MatchResult {
+  setNumber: String
+  firstPlayer: String
+  secondPlayer: String
+}
+
+type Information {
+  clubName: String
+  playfieldName: String
+  timeblockName: String
+  firstPlayerName: String
+  secondPlayerName: String
+}
+
+input MatchInput {
+  date: Date!
+  playfieldId: ID!
+  timeblockId: ID!
+}
+
+input MatchResultInput {
+  setNumber: String
+  firstPlayer: String
+  secondPlayer: String
+}
+
+input AdminMatchInput {
+  date: Date!
+  playfieldId: ID!
+  timeblockId: ID!
+  firstPlayer: ID!
+  secondPlayer: ID
+}

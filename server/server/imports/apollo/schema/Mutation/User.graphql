@@ -1,0 +1,26 @@
+type Mutation {
+  setUserProfile(userId: ID, profile: UserProfileInput): User
+  deleteUser(userId: ID): Success
+  deleteAdmin(userId: ID): Success
+  createCustomer: Success
+  registerCard: String
+  createSubscription(planId: ID): Subscription
+  updateSubscription(planId: ID): Subscription
+  cancelSubscription: Success
+  deleteSubscription(subscriptionId: ID): Success
+  deleteCard(cardId: ID): Success
+  # Admin
+  createAdmin(data: AdminInput): User
+  updateAdmin(userId: ID, data: AdminUpdateInput): Success
+  updateUserProfile(userId: ID, data: UpdateUserProfile): Success
+  deleteUserSubscription(userId: ID, subscriptionId: ID): Success
+  cancelUserSubscription(userId: ID): Success
+  updateUserSubscription(userId: ID, planId: ID): Success
+  deleteUserCard(userId: ID, cardId: ID): Success
+  insertUser(email: String, plainPassword: String, profile: JSON): User
+  updateAdminEmail(
+    oldEmail: String
+    newEmail: String
+    confirmEmail: String
+  ): Success
+}

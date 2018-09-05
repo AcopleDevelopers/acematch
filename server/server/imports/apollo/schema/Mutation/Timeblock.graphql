@@ -1,0 +1,19 @@
+type Mutation {
+  createTimeblock(
+    name: String
+    clubId: ID
+    startTime: String
+    endTime: String
+    activeDays: [JSON]
+    playfieldIds: [ID]
+  ): Timeblock
+  updateTimeblock(
+    timeblockId: ID
+    name: String
+    startTime: String
+    endTime: String
+    activeDays: [JSON]
+    playfieldIds: [ID]
+  ): Timeblock
+  deleteTimeblock(timeblockId: ID): Success
+}

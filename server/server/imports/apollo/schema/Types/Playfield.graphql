@@ -1,0 +1,10 @@
+type Playfield {
+  _id: ID
+  name: String
+  description: String
+  createdAt: Date
+  clubId: ID
+  scheduledMatches: Int
+  pendingMatches: Int
+  enabled: Boolean
+}

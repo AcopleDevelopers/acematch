@@ -1,0 +1,12 @@
+type Mutation {
+  createMatch(data: MatchInput): Match
+  updateMatch(matchId: ID, data: MatchInput): Match
+  deleteMatch(matchId: ID): Success
+  joinMatch(data: MatchInput): Match
+  cancelMatch(matchId: ID): Success
+  # admin
+  adminCreateMatch(data: AdminMatchInput): Success
+  updateMatchPlayers(matchId: ID, firstPlayer: ID, secondPlayer: ID): Success
+  updateMatchInformation(matchId: ID, data: MatchInput): Success
+  updateMatchResult(matchId: ID, result: [MatchResultInput], winner: ID!): Success
+}

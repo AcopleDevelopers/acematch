@@ -1,0 +1,77 @@
+:local(.container) {
+  font-size: 13px;
+  width: 100%;
+  min-width: 200px;
+}
+
+:local(.matches) {
+  overflow-x: auto;
+}
+
+:local(.cell):hover {
+  background-color: #313131;
+  color: #ffff;
+}
+
+:local(.table) > table {
+  border-collapse: collapse;
+  width: 100%;
+  flex: 1;
+}
+
+:local(.table) > tbody {
+  padding: 8px;
+}
+
+:local(.table) > tr > th > td {
+  padding: 8px;
+}
+
+:local(.table) > th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4caf50;
+  color: white;
+}
+
+:local(.table) {
+  margin-bottom: 15px;
+  width: 100%;
+  text-align: center;
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+  flex: 1;
+}
+
+:local(.table) > thead {
+  color: #5d5d5d;
+  font-size: 13px;
+  font-weight: bolder;
+}
+
+:local(.table) > tbody {
+  box-shadow: 0 2px 4px 0 #bdc0c7;
+  cursor: pointer;
+}
+
+:local(.table) > tbody > tr {
+  background: #ffff;
+}
+
+:local(.table) > tbody > tr > td {
+  padding: 5px;
+  vertical-align: middle;
+}
+
+:local(.table) > thead > tr > td {
+  width: 12%;
+  padding: 18px;
+  vertical-align: middle;
+}
+
+:local(.noItems) {
+  text-align: center;
+  display: flex;
+}

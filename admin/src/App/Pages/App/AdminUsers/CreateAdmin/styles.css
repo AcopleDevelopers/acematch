@@ -1,0 +1,13 @@
+:local(.container) {
+}
+
+:local(.divider) {
+  height: 1px;
+  background: #eee;
+  margin: 20px 0;
+}
+
+:local(.button) {
+  margin: 10px 0;
+  text-align: right;
+}

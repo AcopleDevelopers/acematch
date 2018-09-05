@@ -1,0 +1,26 @@
+:local(.container) {
+}
+
+:local(.noImage) {
+  margin: 0 100px;
+  width: 296px;
+  height: 235px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: rgb(208, 209, 196);
+}
+
+:local(.logoUp) {
+  margin: 0 100px;
+  width: 296px;
+  height: 235px;
+}
+
+:local(.logoUp) img {
+  margin-left: 0;
+  height: 235px;
+}
+
+:local(.text) {
+  padding: 106px 0;
+}

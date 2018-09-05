@@ -1,0 +1,81 @@
+:local(.container) {
+  padding-bottom: 25px;
+}
+
+:local(.button) {
+  text-align: left;
+}
+
+:local(.title) {
+  margin-bottom: 20px;
+}
+
+local(.table) > table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+:local(.table) > tbody {
+  padding: 8px;
+}
+
+:local(.table) > tr > th > td {
+  padding: 8px;
+}
+
+:local(.table) > th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4caf50;
+  color: white;
+}
+
+:local(.cell) {
+}
+
+:local(.cell):hover {
+  color: #ffff;
+  background-color: #2e2e2e;
+}
+
+:local(.cellSelect) {
+  color: #ffff;
+  background-color: #2e2e2e !important;
+}
+
+:local(.table) {
+  margin-bottom: 15px;
+  width: 100%;
+  text-align: center;
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+
+:local(.table) > thead {
+  color: #5d5d5d;
+  font-size: 13px;
+  font-weight: bolder;
+}
+
+:local(.table) > tbody {
+  box-shadow: 0 2px 4px 0 #bdc0c7;
+  cursor: pointer;
+}
+
+:local(.table) > tbody > tr {
+  background: #ffff;
+}
+
+:local(.table) > tbody > tr > td {
+  padding: 20px;
+  border-bottom: 1px solid #737373b8;
+  vertical-align: middle;
+}
+
+:local(.table) > thead > tr > td {
+  width: 12%;
+  padding: 18px;
+  vertical-align: middle;
+}

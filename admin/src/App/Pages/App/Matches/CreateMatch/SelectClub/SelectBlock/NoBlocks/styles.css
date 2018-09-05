@@ -1,0 +1,8 @@
+:local(.container) {
+  margin: 100px;
+  text-align: center;
+}
+
+:local(.container) img {
+  height: 50px;
+}

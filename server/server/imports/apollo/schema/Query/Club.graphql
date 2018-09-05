@@ -1,0 +1,4 @@
+type Query {
+  getClub(clubId: ID): Club
+  clubs: [Club]
+}

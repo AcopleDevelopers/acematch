@@ -1,0 +1,18 @@
+:local(.container) {
+}
+
+:local(.subCapsule) {
+  background-color: #00ff1f21;
+  padding: 25px 15px;
+  border-radius: 10px;
+}
+
+:local(.subTitle) {
+  font-size: 15px;
+  font-weight: 400;
+  padding-bottom: 20px;
+}
+
+:local(.button) {
+  margin-top: 12px;
+}

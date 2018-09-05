@@ -1,0 +1,9 @@
+:local(.container) {
+    margin: 10px;
+  text-align: right;
+}
+
+:local(.delete > span){
+  background-color: #ff0000 !important;
+  color: white !important;
+}

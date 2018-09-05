@@ -1,0 +1,23 @@
+:local(.container) {
+  width: 100%;
+  height: 220px;
+  background-color: #4ce88452;
+  text-align: center;
+}
+
+:local(.icon) {
+  padding: 20px 0;
+}
+
+:local(.number) {
+  padding: 10px 0;
+}
+
+:local(.text) {
+  padding: 10px 0;
+}
+
+:local(.color) {
+  color: #69ab68;
+  font-size: 25px;
+}

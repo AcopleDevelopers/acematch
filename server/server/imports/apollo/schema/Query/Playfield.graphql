@@ -1,0 +1,5 @@
+type Query {
+  getPlayfield(playfieldId: ID): Playfield
+  playfields(clubId: ID): [Playfield]
+  adminPlayfields(clubId: ID): [Playfield]
+}

@@ -1,0 +1,6 @@
+type Mutation {
+  createPlayfield(name: String, description: String, clubId: ID): Playfield
+  updatePlayfield(playfieldId: ID, name: String, description: String): Playfield
+  deletePlayfield(playfieldId: ID): Success
+  disablePlayfield(playfieldId: ID): Success
+}

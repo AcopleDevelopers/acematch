@@ -1,0 +1,13 @@
+type Success {
+  success: Boolean
+}
+
+type File {
+  url: String
+  meta: JSON
+}
+
+input FileInput {
+  url: String
+  meta: JSON
+}

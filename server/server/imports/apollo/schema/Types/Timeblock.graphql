@@ -1,0 +1,28 @@
+type Timeblock {
+  _id: ID
+  name: String
+  createdAt: Date
+  state: Boolean
+  clubId: ID
+  startTime: Date
+  endTime: Date
+  activeDays: [Int]
+  playfieldIds: [ID]
+}
+
+type TimeblockForMatches {
+  _id: ID
+  name: String
+  date: Date
+  playfieldId: ID
+  createdAt: Date
+  state: Boolean
+  clubId: ID
+  matchId: ID
+  timeblockId: ID
+  activeDays: [Int]
+  startTime: String
+  endTime: String
+  firstPlayer: String
+  secondPlayer: String
+}

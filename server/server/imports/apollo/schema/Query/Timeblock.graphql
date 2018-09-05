@@ -1,0 +1,5 @@
+type Query {
+  getTimeblock(timeblockId: ID): Timeblock
+  timeblocks(clubId: ID): [Timeblock]
+  getTimeblockForMatches(playfieldId: ID, startDate: Date, endDate: Date): [TimeblockForMatches]
+}

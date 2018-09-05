@@ -1,0 +1,24 @@
+{
+  "expo": {
+    "name": "AceMatch",
+    "icon": "./icon.png",
+    "version": "1.0.14",
+    "slug": "acematch",
+    "sdkVersion": "26.0.0",
+    "notification": {
+      "icon": "./icon.png",
+      "color": "#000000",
+      "androidMode": "default"
+    },
+    "ios": {
+      "bundleIdentifier": "com.acematch.app",
+      "config": {
+        "usesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.acematch.app",
+      "versionCode": 14
+    }
+  }
+}

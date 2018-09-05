@@ -1,0 +1,12 @@
+:local(.container) {
+}
+
+:local(.button) {
+  margin: 20px 0;
+}
+
+:local(.divider) {
+  height: 1px;
+  background: #ddd;
+  margin: 20px 0;
+}

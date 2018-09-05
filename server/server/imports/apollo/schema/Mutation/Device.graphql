@@ -1,0 +1,4 @@
+type Mutation {
+  registerDevice(pushToken: ID): Success
+  removeDevice(pushToken: ID): Success
+}

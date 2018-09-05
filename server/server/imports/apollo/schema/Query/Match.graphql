@@ -1,0 +1,8 @@
+type Query {
+  getMatch(matchId: ID): Match
+  matches: [Match]
+  getMyMatches: [Match]
+  matchesOfTheDay: [Match]
+  matchesOfMonth: [Match]
+  matchesInMoment: [Match]
+}

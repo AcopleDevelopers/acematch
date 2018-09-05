@@ -1,0 +1,8 @@
+type Query {
+	# Returns the logged in user
+	me: User
+	# Returns the specified user
+	user(userId: ID!): User
+	allUsers: [User]
+	newUsers: [User]
+}

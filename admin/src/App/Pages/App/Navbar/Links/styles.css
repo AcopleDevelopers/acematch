@@ -1,0 +1,21 @@
+:local(.container) {
+  padding-right: 40px;
+  font-size: 13px;
+}
+
+:local(.menuItem) {
+  padding-right: 12px;
+  color: #b1b1b1 !important;
+  cursor: pointer;
+}
+
+:local(.menuItem):hover {
+  color: #ffff !important;
+  text-decoration: none;
+}
+
+:local(.menuActive) {
+  composes: menuItem;
+  color: #ffff !important;
+  font-weight: bold;
+}

@@ -1,0 +1,7 @@
+:local(.container) {
+}
+
+:local(.deletePlan > span) {
+  background-color: #ff0000 !important;
+  color: white !important;
+}

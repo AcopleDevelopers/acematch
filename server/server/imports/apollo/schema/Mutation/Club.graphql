@@ -1,0 +1,5 @@
+type Mutation {
+  createClub(name: String, picture: FileInput): Club
+  updateClub(clubId: ID, name: String, picture: FileInput): Club
+  deleteClub(clubId: ID): Success
+}

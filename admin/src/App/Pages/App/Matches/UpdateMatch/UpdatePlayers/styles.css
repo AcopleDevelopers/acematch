@@ -1,0 +1,7 @@
+:local(.container) {
+  padding-bottom: 110px;
+}
+
+:local(.title) {
+  margin-bottom: 20px;
+}

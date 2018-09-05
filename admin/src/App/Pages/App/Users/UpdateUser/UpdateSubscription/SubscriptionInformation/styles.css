@@ -1,0 +1,6 @@
+:local(.container) {
+}
+
+:local(.noSubscription) {
+  color: red;
+}

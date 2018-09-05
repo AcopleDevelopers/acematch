@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'Noway';
+  src: url('noway-bold-webfont.eot');
+  src: url('noway-bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('noway-bold-webfont.woff2') format('woff2'), url('noway-bold-webfont.woff') format('woff'),
+    url('noway-bold-webfont.ttf') format('truetype'),
+    url('noway-bold-webfont.svg#nowaybold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noway';
+  src: url('noway-light-webfont.eot');
+  src: url('noway-light-webfont.eot?#iefix') format('embedded-opentype'),
+    url('noway-light-webfont.woff2') format('woff2'), url('noway-light-webfont.woff') format('woff'),
+    url('noway-light-webfont.ttf') format('truetype'),
+    url('noway-light-webfont.svg#nowaylight') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noway';
+  src: url('noway-medium-webfont.eot');
+  src: url('noway-medium-webfont.eot?#iefix') format('embedded-opentype'),
+    url('noway-medium-webfont.woff2') format('woff2'),
+    url('noway-medium-webfont.woff') format('woff'),
+    url('noway-medium-webfont.ttf') format('truetype'),
+    url('noway-medium-webfont.svg#nowaymedium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noway';
+  src: url('noway-regular-webfont.eot');
+  src: url('noway-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('noway-regular-webfont.woff2') format('woff2'),
+    url('noway-regular-webfont.woff') format('woff'),
+    url('noway-regular-webfont.ttf') format('truetype'),
+    url('noway-regular-webfont.svg#nowayregular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noway';
+  src: url('noway-thin-webfont.eot');
+  src: url('noway-thin-webfont.eot?#iefix') format('embedded-opentype'),
+    url('noway-thin-webfont.woff2') format('woff2'), url('noway-thin-webfont.woff') format('woff'),
+    url('noway-thin-webfont.ttf') format('truetype'),
+    url('noway-thin-webfont.svg#nowaythin') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}

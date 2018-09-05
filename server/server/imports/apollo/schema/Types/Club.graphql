@@ -1,0 +1,10 @@
+type Club {
+  _id: ID
+  name: String
+  createdAt: Date
+  playfields: [Playfield]
+  timeblocks: [Timeblock]
+  playfieldNumber: Int
+  timeblocksNumber: Int
+  picture: File
+}

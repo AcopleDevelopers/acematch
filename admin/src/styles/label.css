@@ -1,0 +1,9 @@
+.label {
+  margin-top: 20px;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+.label:first-child {
+  margin-top: 0;
+}

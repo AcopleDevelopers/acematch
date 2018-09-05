@@ -1,0 +1,7 @@
+import './onDelete'
+import './matchResultAdd'
+import './firstPlayerLeave'
+import './addInformation'
+import './joinMatch'
+import './secondPlayerLeave'
+import './afterUpdateInformation'
