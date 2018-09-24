@@ -7,13 +7,7 @@ import send from 'api/emails/send'
 import {Meteor} from 'meteor/meteor'
 import rp from 'request-promise'
 
-Matches.after.remove(async function(
-  userId,
-  doc,
-  fieldNames,
-  modifier,
-  options
-) {
+Matches.after.remove(async function(userId, doc, fieldNames, modifier, options) {
   const firstPlayerDevices = Devices.find({
     userId: doc.firstPlayer,
     confirmation: true

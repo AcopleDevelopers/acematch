@@ -32,7 +32,7 @@ export default async function({usersIds, subject, template, data, addresses}) {
   }
 
   if (addresses) {
-    addresses.map(to => {
+    addresses.forEach(to => {
       sendEmail({to, subject, template, data})
     })
   }

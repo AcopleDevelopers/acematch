@@ -10,13 +10,15 @@ Matches.after.update(async function(userId, doc) {
   let change = false
   let parameters = cloneDeep(doc.information)
 
-  let firstPlayerName = parameters.firstPlayerName
-  let secondPlayerName = parameters.secondPlayerName
-  let firstPlayer = parameters.firstPlayer
-  let secondPlayer = parameters.secondPlayer
-  let clubName = parameters.clubName
-  let playfieldName = parameters.playfieldName
-  let timeblocksName = parameters.timeblocksName
+  let {
+    firstPlayerName,
+    secondPlayerName,
+    firstPlayer,
+    secondPlayer,
+    clubName,
+    playfieldName,
+    timeblocksName
+  } = parameters
 
   if (this.previous.firstPlayer !== doc.firstPlayer) {
     change = true
@@ -25,6 +27,7 @@ Matches.after.update(async function(userId, doc) {
       firstPlayer.profile.lastName
     }`
   }
+
   if (this.previous.secondPlayer !== doc.secondPlayer) {
     change = true
     secondPlayer = Users.findOne(doc.secondPlayer)
@@ -32,14 +35,17 @@ Matches.after.update(async function(userId, doc) {
       secondPlayer.profile.lastName
     }`
   }
+
   if (this.previous.clubId !== doc.clubId) {
     change = true
     clubName = Clubs.findOne(doc.clubId).name
   }
+
   if (this.previous.playfieldId !== doc.playfieldId) {
     change = true
     playfieldName = Playfields.findOne(doc.playfieldId).name
   }
+
   if (this.previous.timeblockId !== doc.timeblockId) {
     change = true
     timeblocksName = Timeblocks.findOne(doc.timeblockId).name

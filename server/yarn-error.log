@@ -1,17 +1,20 @@
 Arguments: 
-  /usr/bin/node /usr/bin/yarn add moment
+  /Users/joaquingumuciolabbe/.nvm/versions/node/v8.9.4/bin/node /usr/local/Cellar/yarn/1.6.0/libexec/bin/yarn.js
 
 PATH: 
-  /home/nicolas/Documents/google-cloud-sdk-202.0.0-linux-x86_64/google-cloud-sdk/bin:/home/nicolas/.yarn/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+  /Users/joaquingumuciolabbe/Downloads/google-cloud-sdk/bin:/Users/joaquingumuciolabbe/.pyenv/plugins/pyenv-virtualenv/shims:/Users/joaquingumuciolabbe/.pyenv/shims:/usr/local/sbin:/Users/joaquingumuciolabbe/.nvm/versions/node/v8.9.4/bin:/Users/joaquingumuciolabbe/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Applications/Wireshark.app/Contents/MacOS:/usr/local/bin:/Users/joaquingumuciolabbe/.fzf/bin
 
 Yarn version: 
-  1.5.1
+  1.6.0
 
 Node version: 
-  8.11.1
+  8.9.4
 
 Platform: 
-  linux x64
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/lottie-react-native/-/lottie-react-native-2.3.2.tgz: ENOENT: no such file or directory, utime '/Users/joaquingumuciolabbe/Library/Caches/Yarn/v1/npm-lottie-react-native-2.3.2-c9b751e1c121708cd6f50f7770cb5aa0e1042a29/.gradle/3.3/taskArtifacts/fileHashes.bin'
 
 npm manifest: 
   {
@@ -36,7 +39,7 @@ npm manifest:
       "juice": "^4.2.3",
       "lodash": "^4.17.5",
       "meteor-node-stubs": "^0.3.3",
-      "moment": "^2.22.1",
+      "moment": "^2.22.2",
       "multer": "^1.3.0",
       "multer-s3": "^2.7.0",
       "object-path": "^0.11.4",
@@ -2874,9 +2877,9 @@ Lockfile:
     dependencies:
       minimist "0.0.8"
   
-  moment@^2.22.1:
-    version "2.22.1"
-    resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.1.tgz#529a2e9bf973f259c9643d237fda84de3a26e8ad"
+  moment@^2.22.2:
+    version "2.22.2"
+    resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
   
   mongo-object@^0.1.2:
     version "0.1.2"
@@ -4250,6 +4253,3 @@ Lockfile:
   zen-observable@^0.8.0:
     version "0.8.8"
     resolved "https://registry.yarnpkg.com/zen-observable/-/zen-observable-0.8.8.tgz#1ea93995bf098754a58215a1e0a7309e5749ec42"
-
-Trace: 
-  Error: EACCES: permission denied, unlink '/home/nicolas/Projects/acematch/server/node_modules/.yarn-integrity'

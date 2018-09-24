@@ -107,7 +107,7 @@ class Login extends React.Component {
           ¿Olvidaste tu contraseña?
         </BlueText>
         <WhiteText style={[styles.text, styles.smallText]}>
-          Powered by Utips & Orionsoft
+          Powered by Acople
         </WhiteText>
       </ViewWithBackground>
     )

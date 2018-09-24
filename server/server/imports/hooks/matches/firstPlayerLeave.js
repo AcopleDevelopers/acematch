@@ -7,13 +7,7 @@ import send from 'api/emails/send'
 import {Meteor} from 'meteor/meteor'
 import rp from 'request-promise'
 
-Matches.after.update(async function(
-  userId,
-  doc,
-  fieldNames,
-  modifier,
-  options
-) {
+Matches.after.update(async function(userId, doc, fieldNames, modifier, options) {
   if (
     this.previous.firstPlayer !== doc.firstPlayer &&
     this.previous.secondPlayer === doc.firstPlayer
