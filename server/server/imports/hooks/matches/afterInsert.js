@@ -14,8 +14,6 @@ Matches.after.insert(async function(userId, doc) {
       { 'profile.genre': matchGender }
     ]}).fetch()
 
-    console.log('allSameCategoryPlayers:', allSameCategoryPlayers, '\n')
-
     const title = `Nuevo match disponible en tu categoría`
     const body = `Alguien ha creado un nuevo match de tu misma categoría`
 
