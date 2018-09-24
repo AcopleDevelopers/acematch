@@ -111,7 +111,9 @@ class List extends React.Component {
         scrollOffset: 0
       },
       () => {
-        this.list.scrollToOffset({offset: scrollOffset, animated: false})
+        if (this.list) {
+          this.list.scrollToOffset({offset: scrollOffset, animated: false})
+        }
       }
     )
   }
