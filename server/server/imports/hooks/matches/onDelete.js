@@ -6,34 +6,7 @@ import Matches from 'api/collections/Matches'
 import send from 'api/emails/send'
 import {Meteor} from 'meteor/meteor'
 import rp from 'request-promise'
-
-const matchCanceledPushNotification = (playerDevices, timeblock, club, playfield) => {
-  for (const device of playerDevices) {
-    rp({
-      uri: 'https://exp.host/--/api/v2/push/send',
-      method: 'POST',
-      json: true,
-      body: {
-        to: device.pushToken,
-        title: 'Se ha cancelado uno de tus Match.',
-        body: `Se ha cancelado el match en el club ${club.name}, cancha ${
-          playfield.name
-        } y en el bloque ${timeblock.name}.`,
-        priority: 'high',
-        data: {
-          title: 'Se ha cancelado uno de tus Match.',
-          body: `Se ha cancelado el match en el club ${club.name}, cancha ${
-            playfield.name
-          } y en el bloque ${timeblock.name}.`,
-          priority: 'high',
-          ios: {
-            sound: true
-          }
-        }
-      }
-    })
-  }
-}
+import sendPushNotification from '../sendPushNotification'
 
 Matches.after.remove(async function(userId, doc, fieldNames, modifier, options) {
   const firstPlayerDevices = Devices.find({
@@ -71,10 +44,10 @@ Matches.after.remove(async function(userId, doc, fieldNames, modifier, options) 
   }
 
   if (firstPlayerDevices) {
-    matchCanceledPushNotification(firstPlayerDevices, timeblock, club, playfield)
+    sendPushNotification(firstPlayerDevices, timeblock, club, playfield)
   }
 
   if (secondPlayerDevices) {
-    matchCanceledPushNotification(secondPlayerDevices, timeblock, club, playfield)
+    sendPushNotification(secondPlayerDevices, timeblock, club, playfield)
   }
 })

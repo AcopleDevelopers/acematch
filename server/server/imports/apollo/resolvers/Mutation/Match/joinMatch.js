@@ -28,22 +28,27 @@ export default async function(root, {data}, context) {
 
   let matchId
   if (existingMatch) {
-    // If there is an existing match check if it's a free spot
+    // If there is an existing match check if it has a free spot
     if (existingMatch.firstPlayer && existingMatch.secondPlayer) {
       throw new Error('Bloque tomado')
     }
 
+    // Check if the match creator is the same as the contestant
     if (existingMatch.firstPlayer === context.userId) {
       throw new Error('No puedes jugar contra tí mismo')
     }
+    
     const playerInMatch = Users.findOne({_id: existingMatch.firstPlayer})
     const actualPlayer = Users.findOne(context.userId)
+
+    // Check that both players are the same category
     if (playerInMatch.expertiseLevel !== actualPlayer.expertiseLevel) {
       throw new Error(
         'Solo puedes jugar contra jugadores que tengan el mismo nivel de experiencia.'
       )
     }
-    // If it's set the player to the free spot
+
+    // Set the player to the free spot
     matchId = existingMatch._id
     await encounterValidation(context.userId)
     Matches.update(matchId, {$set: {secondPlayer: context.userId}})
