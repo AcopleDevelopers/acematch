@@ -7,11 +7,40 @@ import send from 'api/emails/send'
 import {Meteor} from 'meteor/meteor'
 import rp from 'request-promise'
 
+const matchCanceledPushNotification = (playerDevices, timeblock, club, playfield) => {
+  for (const device of playerDevices) {
+    rp({
+      uri: 'https://exp.host/--/api/v2/push/send',
+      method: 'POST',
+      json: true,
+      body: {
+        to: device.pushToken,
+        title: 'Se ha cancelado uno de tus Match.',
+        body: `Se ha cancelado el match en el club ${club.name}, cancha ${
+          playfield.name
+        } y en el bloque ${timeblock.name}.`,
+        priority: 'high',
+        data: {
+          title: 'Se ha cancelado uno de tus Match.',
+          body: `Se ha cancelado el match en el club ${club.name}, cancha ${
+            playfield.name
+          } y en el bloque ${timeblock.name}.`,
+          priority: 'high',
+          ios: {
+            sound: true
+          }
+        }
+      }
+    })
+  }
+}
+
 Matches.after.remove(async function(userId, doc, fieldNames, modifier, options) {
   const firstPlayerDevices = Devices.find({
     userId: doc.firstPlayer,
     confirmation: true
   }).fetch()
+
   const secondPlayerDevices = Devices.find({
     userId: doc.secondPlayer,
     confirmation: true
@@ -42,58 +71,10 @@ Matches.after.remove(async function(userId, doc, fieldNames, modifier, options) 
   }
 
   if (firstPlayerDevices) {
-    for (const device of firstPlayerDevices) {
-      rp({
-        uri: 'https://exp.host/--/api/v2/push/send',
-        method: 'POST',
-        json: true,
-        body: {
-          to: device.pushToken,
-          title: 'Se ha cancelado uno de tus Match.',
-          body: `Se ha cancelado el match en el club ${club.name}, cancha ${
-            playfield.name
-          } y en el bloque ${timeblock.name}.`,
-          priority: 'high',
-          data: {
-            title: 'Se ha cancelado uno de tus Match.',
-            body: `Se ha cancelado el match en el club ${club.name}, cancha ${
-              playfield.name
-            } y en el bloque ${timeblock.name}.`,
-            priority: 'high',
-            ios: {
-              sound: true
-            }
-          }
-        }
-      })
-    }
+    matchCanceledPushNotification(firstPlayerDevices, timeblock, club, playfield)
   }
 
   if (secondPlayerDevices) {
-    for (const device of secondPlayerDevices) {
-      rp({
-        uri: 'https://exp.host/--/api/v2/push/send',
-        method: 'POST',
-        json: true,
-        body: {
-          to: device.pushToken,
-          title: 'Se ha cancelado uno de tus Match.',
-          body: `Se ha cancelado el match en el club ${club.name}, cancha ${
-            playfield.name
-          } y en el bloque ${timeblock.name}.`,
-          priority: 'high',
-          data: {
-            title: 'Se ha cancelado uno de tus Match',
-            body: `Se ha cancelado el match en el club ${club.name}, cancha ${
-              playfield.name
-            } y en el bloque ${timeblock.name}.`,
-            priority: 'high',
-            ios: {
-              sound: true
-            }
-          }
-        }
-      })
-    }
+    matchCanceledPushNotification(secondPlayerDevices, timeblock, club, playfield)
   }
 })
