@@ -26,22 +26,32 @@ class Subscriptions extends React.Component {
         <Title>Suscripción</Title>
         <Subtitle>¡Elige tu plan!</Subtitle>
         <Capsule
-          title="Plan básico"
-          body="$25.000 mensual"
+          title="Plan Mensual"
+          body="$9.990 mensual"
           bottom="2 matches mensuales"
           onPress={() => {
             navigation.navigate('PlanDescription', {
-              plan: {id: 'basico', price: 25000, name: 'Básico'}
+              plan: {id: 'mensual', price: 9990, name: 'Mensual'}
             })
           }}
         />
         <Capsule
-          title="Plan corriente"
-          body="$40.000 mensual"
-          bottom="4 matches mensuales"
+          title="Plan Semestral"
+          body="10% Descuento: $53.000 cada 6 meses"
+          bottom="2 matches mensuales"
           onPress={() => {
             navigation.navigate('PlanDescription', {
-              plan: {id: 'corriente', price: 40000, name: 'Corriente'}
+              plan: {id: 'semestral', price: 53000, name: 'Semestral'}
+            })
+          }}
+        />
+        <Capsule
+          title="Plan Anual"
+          body="20% Descuento: $95.900 cada año"
+          bottom="2 matches mensuales"
+          onPress={() => {
+            navigation.navigate('PlanDescription', {
+              plan: {id: 'anual', price: 95900, name: 'Anual'}
             })
           }}
         />

@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native'
 export default StyleSheet.create({
   capsule: {
     width: '100%',
-    height: '33%',
+    height: '22%',
     borderRadius: 20,
     alignItems: 'center',
     justifyContent: 'center',
@@ -23,13 +23,15 @@ export default StyleSheet.create({
   title: {
     marginTop: 10,
     color: 'white',
-    fontSize: 36,
+    fontSize: 30,
     fontWeight: '300'
   },
   body: {
     color: 'white',
-    fontSize: 28,
-    fontWeight: 'bold'
+    fontSize: 24,
+    fontWeight: 'bold',
+    paddingLeft: 5,
+    paddingRight: 5
   },
   bottom: {
     color: 'white',
