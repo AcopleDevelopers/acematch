@@ -106,16 +106,22 @@ export default class ChangeSubscriptionModal extends React.Component {
       <Modal visible={visible} loading={loading}>
         <Title style={styles.title}>Cambio de suscripción</Title>
         <Option
-          label="Plan Básico"
-          info="$20.000/mes"
-          onPress={() => this.setState({subscription: 'basico'})}
-          active={selectedSubscription === 'basico'}
+          label="Plan Mensual"
+          info="$9.990/mes"
+          onPress={() => this.setState({subscription: 'mensual'})}
+          active={selectedSubscription === 'mensual'}
         />
         <Option
-          label="Plan Corriente"
-          info="$40.000/mes"
-          onPress={() => this.setState({subscription: 'corriente'})}
-          active={selectedSubscription === 'corriente'}
+          label="Plan Semestral"
+          info="$53.000/mes (10% Descuento)"
+          onPress={() => this.setState({subscription: 'semestral'})}
+          active={selectedSubscription === 'semestral'}
+        />
+        <Option
+          label="Plan Anual"
+          info="$95.900/mes (20% Descuento)"
+          onPress={() => this.setState({subscription: 'anual'})}
+          active={selectedSubscription === 'anual'}
         />
         <View style={styles.space} />
         <View style={styles.buttons}>
