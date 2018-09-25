@@ -10,6 +10,7 @@ import getSubscription from './getSubscription'
 import cancelSubscription from './cancelSubscription'
 import updateSubscription from './updateSubscription'
 import deleteCard from './deleteCard'
+import chargeCard from './chargeCard'
 
 export {
   createCustomer,
@@ -23,5 +24,6 @@ export {
   getSubscription,
   cancelSubscription,
   updateSubscription,
-  deleteCard
+  deleteCard,
+  chargeCard
 }

@@ -66,7 +66,6 @@ export default class TabsComponent extends React.Component {
 
   retrieveTutorialStatus = async () => {
     const tutorialShowed = await AsyncStorage.getItem('tutorialShowed')
-    console.log('tutorialShowed', tutorialShowed)
     if (tutorialShowed !== 'true') {
       this.setState({tutorial: true})
     }

@@ -11,6 +11,7 @@ export default async function(root, {data}, context) {
   if (!enabledSchedule(currentDate, data.date)) {
     throw new Error('Solo se puede crear o entrar a un match hasta las 19:00 del día anterior')
   }
+
   // Check for existing match
   const startDayDate = data.date
   const endDayDate = data.date
@@ -22,7 +23,7 @@ export default async function(root, {data}, context) {
 
   const user = Users.findOne(context.userId)
   const subscription = await getSubscription(user.subscriptionId)
-  if (!matchFilter(subscription, context.userId)) {
+  if (!matchFilter(subscription, user)) {
     throw new Error('Solo puedes agendar una cierta cantidad de matches al mes segun tu plan')
   }
 

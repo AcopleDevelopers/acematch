@@ -10,6 +10,7 @@ class ImageTitle extends React.Component {
     background: Image.propTypes.source,
     title: Title.propTypes.children,
     leftComponent: PropTypes.any,
+    centerComponent: PropTypes.any,
     rightComponent: PropTypes.any
   }
 
@@ -17,6 +18,13 @@ class ImageTitle extends React.Component {
     const {leftComponent} = this.props
     return leftComponent
       ? React.cloneElement(leftComponent, {style: styles.leftComponent})
+      : null
+  }
+
+  renderCenterComponent() {
+    const {centerComponent} = this.props
+    return centerComponent
+      ? React.cloneElement(centerComponent, {style: styles.centerComponent})
       : null
   }
 
@@ -38,6 +46,7 @@ class ImageTitle extends React.Component {
         </Title>
         <View style={styles.bottomComponents}>
           <View style={styles.left}>{this.renderLeftComponent()}</View>
+          <View style={styles.center}>{this.renderCenterComponent()}</View>
           <View style={styles.right}>{this.renderRightComponent()}</View>
         </View>
       </View>

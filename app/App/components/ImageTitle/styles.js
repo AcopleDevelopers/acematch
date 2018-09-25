@@ -24,6 +24,9 @@ export default StyleSheet.create({
   left: {
     justifyContent: 'flex-start'
   },
+  center: {
+    justifyContent: 'center'
+  },
   right: {
     justifyContent: 'flex-end'
   }

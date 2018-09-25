@@ -7,6 +7,7 @@ import adminCreateMatch from './adminCreateMatch'
 import updateMatchPlayers from './updateMatchPlayers'
 import updateMatchInformation from './updateMatchInformation'
 import updateMatchResult from './updateMatchResult'
+import buyExtraMatch from './buyExtraMatch'
 
 export default {
   updateMatchResult,
@@ -17,5 +18,6 @@ export default {
   joinMatch,
   deleteMatch,
   updateMatch,
-  createMatch
+  createMatch,
+  buyExtraMatch
 }

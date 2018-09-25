@@ -76,7 +76,8 @@ export default new SimpleSchema({
   },
   matchesToPlay: {
     type: Number,
-    optional: true
+    optional: true,
+    defaultValue: 0
   },
   enabled: {
     type: Boolean,

@@ -1,6 +1,6 @@
 import Matches from 'api/collections/Matches'
 
-export default function(subscription, userId) {
+export default function(subscription, user) {
   if (!subscription || subscription.status !== 'active') {
     throw new Error('El usuario no posee un plan')
   }
@@ -11,13 +11,13 @@ export default function(subscription, userId) {
     $and: [
       {createdAt: {$gte: firstDay}},
       {createdAt: {$lte: lastDay}},
-      {$or: [{firstPlayer: userId}, {secondPlayer: userId}]}
+      {$or: [{firstPlayer: user._id}, {secondPlayer: user._id}]}
     ]
   }).fetch()
-  if (subscription.plan.id === 'basico' && matches && matches.length < 2) {
-    return true
-  }
-  if (subscription.plan.id === 'corriente' && matches && matches.length < 4) {
+
+  const extraMatches = user.matchesToPlay || 0
+
+  if (matches && matches.length < 2 + extraMatches) {
     return true
   }
   return false
