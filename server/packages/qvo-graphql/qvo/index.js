@@ -5,6 +5,7 @@ import getCustomer from './getCustomer'
 import getPlans from './getPlans'
 import getInscription from './getInscription'
 import getCard from './getCard'
+import getTransaction from './getTransaction'
 import getCardInscription from './getCardInscription'
 import getSubscription from './getSubscription'
 import cancelSubscription from './cancelSubscription'
@@ -20,6 +21,7 @@ export {
   getInscription,
   getCustomer,
   getCard,
+  getTransaction,
   getCardInscription,
   getSubscription,
   cancelSubscription,

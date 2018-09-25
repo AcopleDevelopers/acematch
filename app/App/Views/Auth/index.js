@@ -6,7 +6,6 @@ import Register from './Register'
 import Regulation from './Regulation'
 import TermsAndConditions from '../TermsAndConditions'
 import PrivacyPolicy from '../PrivacyPolicy'
-import BuyExtraMatch from '../BuyExtraMatch'
 
 export default StackNavigator(
   {
@@ -28,9 +27,6 @@ export default StackNavigator(
     ForgotPassword: {
       screen: ForgotPassword
     },
-    BuyExtraMatch: {
-      screen: BuyExtraMatch
-    }
   },
   {
     navigationOptions: {

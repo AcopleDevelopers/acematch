@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import {View, FlatList, TouchableOpacity} from 'react-native'
 import {Circle} from 'react-native-progress'
 import BlueText from 'App/components/texts/BlueText'
-import ExtraMatch from 'App/components/texts/ExtraMatch'
 import ImageTitle from 'App/components/ImageTitle'
 import Dots from 'App/components/Dots'
 import autobind from 'autobind-decorator'
@@ -134,7 +133,6 @@ class List extends React.Component {
               <BlueText onPress={this.goBack}>Atrás</BlueText>
             ) : null
           }
-          centerComponent={<ExtraMatch/>}
           rightComponent={
             dots ? (
               <Dots activeIndex={currentStepIndex} dotsNumber={steps.length} />

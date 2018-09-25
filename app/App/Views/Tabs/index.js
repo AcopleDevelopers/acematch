@@ -8,6 +8,7 @@ import MatchesSchedule from './MatchesSchedule'
 import Profile from './Profile'
 import Settings from './Settings'
 import {Notifications} from 'expo'
+import BuyExtraMatch from './BuyExtraMatch'
 
 import styles from './styles'
 
@@ -33,7 +34,7 @@ const Tabs = TabNavigator({
   Profile: {
     screen: Profile,
     navigationOptions: ({navigation}) => ({
-      title: 'Yo',
+      title: 'Estadisticas',
       tabBarIcon: ({tintColor}) => (
         <Image style={[styles.icon, {tintColor}]} source={require('./imgs/profile.png')} />
       )
@@ -45,6 +46,15 @@ const Tabs = TabNavigator({
       title: <Text>Ajustes</Text>,
       tabBarIcon: ({tintColor}) => (
         <Image style={[styles.icon, {tintColor}]} source={require('./imgs/settings.png')} />
+      )
+    })
+  },
+  BuyExtraMatch: {
+    screen: BuyExtraMatch,
+    navigationOptions: ({navigation}) => ({
+      title: 'Match Extra',
+      tabBarIcon: ({tintColor}) => (
+        <Image style={[styles.icon, {tintColor}]} source={require('./imgs/findMatch.png')} />
       )
     })
   }
