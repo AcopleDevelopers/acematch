@@ -12,6 +12,14 @@ export default StyleSheet.create({
     alignSelf: 'center',
     width: '80%'
   },
+  newMatch: {
+    color: '#666',
+    fontSize: 24,
+    marginVertical: 30,
+    paddingLeft: 25,
+    alignSelf: 'center',
+    width: '80%'
+  },
   button: {
     alignSelf: 'center',
   },

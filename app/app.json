@@ -2,9 +2,9 @@
   "expo": {
     "name": "AceMatch",
     "icon": "./icon.png",
-    "version": "1.0.14",
+    "version": "1.0.16",
     "slug": "acematch",
-    "sdkVersion": "26.0.0",
+    "sdkVersion": "27.0.0",
     "notification": {
       "icon": "./icon.png",
       "color": "#000000",

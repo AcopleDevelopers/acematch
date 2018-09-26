@@ -9,24 +9,28 @@ Picker.route(
     const { query: { transaction_id } } = params
     try {
       const transaction = await getTransaction(transaction_id)
-      console.log('transaction:', trasaction)
-      if (status === 'successful') {
-        const user = Users.findOne({ customerId: customer.id }, { matchesToPlay: 1 })
-        console.log('user', user)
+      if (transaction.status === 'successful') {
+        const userId = transaction.description.split('-')[1]
+        const user = Users.findOne({ _id: userId }, { matchesToPlay: 1 })
+        console.log('user:', user)
         if (typeof user.matchesToPlay !== 'number') {
           Users.update(
-            { customerId: customer.id },
+            { _id: userId },
             { $set: { matchesToPlay: 1 } }
           )
         } else {
           Users.update(
-            { customerId: customer.id },
+            { _id: userId },
             { $inc: { matchesToPlay: 1 } }
           )
         }
-        console.log('matchesToPlay:', user.matchesToPlay)
+        user = Users.findOne({ _id: userId })
+        response.statusCode = 200
+        response.end(JSON.stringify({status:'success', matchesToPlay: user.matchesToPlay}))
       } else {
-        console.log('STATUS:', status)
+        console.log('FAILED STATUS:', status)
+        response.statusCode = 500
+        response.end(JSON.stringify({status: 'failure'}))
       }
     } catch(error) {
       console.log('Error setting matches:', error.message)

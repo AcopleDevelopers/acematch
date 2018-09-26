@@ -20,7 +20,8 @@ export default class BuyExtraMatch extends React.Component {
   }
 
   state = {
-    redirectUrl: ''
+    redirectUrl: '',
+    message: ''
   }
 
   @autobind
@@ -33,12 +34,24 @@ export default class BuyExtraMatch extends React.Component {
     }
   }
 
-  renderInfoOrPayment() {
+  renderMatchesToPlay() {
+    if (this.state.matchesToPlay) {
+      return (
+        <Text style={styles.details}>{`Tienes ${this.state.matchesToPlay} partidos disponibles`}</Text>
+      )
+    }
+  }
+
+  @autobind
+  onNavigationStateChange(event) {
+    if (event.url.indexOf('/voucher') > -1) {
+      this.setState({redirectUrl: '', message: 'Tienes un nuevo partido disponible!'})
+    }
   }
 
   render() {
     const {navigation} = this.props
-    if (!this.state.redirectUrl) {
+    if (!this.state.redirectUrl && !this.state.message) {
       return (
         <View style={styles.container}>
           <ImageTitle background={require('../FindMatch/imgs/titleImage.png')} title='Match Extra' />
@@ -51,11 +64,26 @@ export default class BuyExtraMatch extends React.Component {
           />
         </View>
       )
+    } else if (this.state.message) {
+      return (
+        <View style={styles.container}>
+          <ImageTitle background={require('../FindMatch/imgs/titleImage.png')} title='Match Extra' />
+          <Text style={styles.newMatch}>{this.state.message}</Text>
+          <Text style={styles.details}>{'Si se te acabaron tus partidos, puedes adquirir otro por solo $5.500.\n\nPuedes comprar tantos como quieras!'}</Text>
+          <Button
+            style={styles.button}
+            titleStyle={styles.buttonTitle}
+            title=''
+            onPress={this.buyExtraMatch}
+          />
+        </View>
+      )
     } else {
       return (
         <WebView
           style={styles.webView}
           source={{uri: this.state.redirectUrl}}
+          onNavigationStateChange={this.onNavigationStateChange}
         />
       )
     }
