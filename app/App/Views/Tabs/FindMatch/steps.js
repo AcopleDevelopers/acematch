@@ -83,11 +83,13 @@ export default [
           id: playfield._id,
           component: CourtItem,
           title: playfield.name,
-          subtitle: `${playfield.pendingMatches} solicitud${
-            playfield.pendingMatches === 0 || playfield.pendingMatches > 1
-              ? 'es'
-              : ''
-          }`,
+          // Commente to avoid showing pending matches that doesn't correspond to the searcher GENDER
+          // Logic is neede to be added to "filter" by genter
+          // subtitle: `${playfield.pendingMatches} solicitud${
+          //   playfield.pendingMatches === 0 || playfield.pendingMatches > 1
+          //     ? 'es'
+          //     : ''
+          // }`,
           description: playfield.description,
           onPress: () =>
             nextStep(playfield._id, {playfieldName: playfield.name})

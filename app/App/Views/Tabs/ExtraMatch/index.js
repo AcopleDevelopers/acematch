@@ -73,7 +73,7 @@ export default class BuyExtraMatch extends React.Component {
           <Button
             style={styles.button}
             titleStyle={styles.buttonTitle}
-            title=''
+            title='Comprar Otro'
             onPress={this.buyExtraMatch}
           />
         </View>

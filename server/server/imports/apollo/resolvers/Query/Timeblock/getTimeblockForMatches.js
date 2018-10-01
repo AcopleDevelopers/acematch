@@ -45,7 +45,7 @@ export default function(root, {playfieldId, startDate, endDate}, context) {
       const currentUser = Users.findOne(context.userId)
       if (
         !playerOne ||
-        (!playerTwo && playerOne.profile.category === currentUser.profile.category)
+        (!playerTwo && playerOne.profile.category === currentUser.profile.category && playerOne.profile.genre === currentUser.profile.genre)
       ) {
         blocksArray.push({
           _id: random.alphaNum(10),
