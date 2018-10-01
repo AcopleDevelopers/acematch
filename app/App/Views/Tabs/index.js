@@ -8,7 +8,7 @@ import MatchesSchedule from './MatchesSchedule'
 import Profile from './Profile'
 import Settings from './Settings'
 import {Notifications} from 'expo'
-import BuyExtraMatch from './BuyExtraMatch'
+import ExtraMatch from './ExtraMatch'
 
 import styles from './styles'
 
@@ -40,21 +40,21 @@ const Tabs = TabNavigator({
       )
     })
   },
+  ExtraMatch: {
+    screen: ExtraMatch,
+    navigationOptions: ({navigation}) => ({
+      title: 'Match Extra',
+      tabBarIcon: ({tintColor}) => (
+        <Image style={[styles.icon, {tintColor}]} source={require('./imgs/bell-icon.png')} />
+      )
+    })
+  },
   Settings: {
     screen: Settings,
     navigationOptions: ({navigation}) => ({
       title: <Text>Ajustes</Text>,
       tabBarIcon: ({tintColor}) => (
         <Image style={[styles.icon, {tintColor}]} source={require('./imgs/settings.png')} />
-      )
-    })
-  },
-  BuyExtraMatch: {
-    screen: BuyExtraMatch,
-    navigationOptions: ({navigation}) => ({
-      title: 'Match Extra',
-      tabBarIcon: ({tintColor}) => (
-        <Image style={[styles.icon, {tintColor}]} source={require('./imgs/findMatch.png')} />
       )
     })
   }

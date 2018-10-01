@@ -57,8 +57,7 @@ export default [
         placeholder: 'Tu sexo',
         options: [
           {key: 'MALE', label: 'Hombre'},
-          {key: 'FEMALE', label: 'Mujer'},
-          {key: 'OTHER', label: 'Otro'}
+          {key: 'FEMALE', label: 'Mujer'}
         ]
       }
     ],

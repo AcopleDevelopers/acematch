@@ -37,7 +37,7 @@ class Subscriptions extends React.Component {
         />
         <Capsule
           title="Plan Semestral"
-          body="10% Descuento: $53.000 cada 6 meses"
+          body="10% Descuento: $53.000"
           bottom="2 matches mensuales"
           onPress={() => {
             navigation.navigate('PlanDescription', {
@@ -47,7 +47,7 @@ class Subscriptions extends React.Component {
         />
         <Capsule
           title="Plan Anual"
-          body="20% Descuento: $95.900 cada año"
+          body="20% Descuento: $95.900"
           bottom="2 matches mensuales"
           onPress={() => {
             navigation.navigate('PlanDescription', {
