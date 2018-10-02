@@ -75,9 +75,21 @@ export default new SimpleSchema({
     optional: true
   },
   matchesToPlay: {
-    type: Number,
+    type: Array,
     optional: true,
-    defaultValue: 0
+    defaultValue: []
+  },
+  'matchesToPlay.$': {
+    type: Object,
+    optional: true,
+  },
+  'matchesToPlay.$.amount': {
+    type: String,
+    optional: true,
+  },
+  'matchesToPlay.$.dueDate': {
+    type: Date,
+    optional: true,
   },
   enabled: {
     type: Boolean,

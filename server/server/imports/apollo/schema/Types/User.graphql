@@ -24,8 +24,8 @@ type User {
   lostMatches: Int
   # Number of won matches
   wonMatches: Int
-  # Number of matches to play
-  matchesToPlay: Int
+  # Number of matches to play and its due date
+  matchesToPlay: [MatchToPlay]
   # Date when the user was created
   createdAt: Date
   # Age of the user
@@ -49,6 +49,11 @@ type UserProfile {
   category: Category
   phone: String
   picture: File
+}
+
+type MatchToPlay {
+  amount: Int
+  dueDate: Date
 }
 
 input CreateUserProfileInput {

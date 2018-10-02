@@ -28,6 +28,12 @@ export default StyleSheet.create({
   },
   webView: {
     marginVertical: 50
+  },
+  extraMatches: {
+    alignSelf: 'center',
+    color: '#000',
+    fontSize: 22,
+    paddingTop: 20
   }
 })
 

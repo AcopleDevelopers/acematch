@@ -3,10 +3,12 @@ import PropTypes from 'prop-types'
 import {View, WebView, Text} from 'react-native'
 import autobind from 'autobind-decorator'
 import withMutation from 'react-apollo-decorators/lib/withMutation'
+import withGraphQL from 'react-apollo-decorators/lib/withGraphQL'
 import gql from 'graphql-tag'
+import moment from 'moment'
+
 import ImageTitle from 'App/components/ImageTitle'
 import Button from 'App/components/Button'
-
 import styles from './styles'
 
 @withMutation(gql`
@@ -14,9 +16,21 @@ import styles from './styles'
     buyExtraMatch
   }
 `)
+@withGraphQL(gql`
+  query me {
+    me {
+      _id
+      matchesToPlay {
+        amount
+        dueDate
+      }
+    }
+  }
+`)
 export default class BuyExtraMatch extends React.Component {
   static propTypes = {
-    navigation: PropTypes.object
+    navigation: PropTypes.object,
+    me: PropTypes.object
   }
 
   state = {
@@ -26,6 +40,7 @@ export default class BuyExtraMatch extends React.Component {
 
   @autobind
   async buyExtraMatch() {
+    this.setState({redirectUrl: '', message: ''})
     try {
       const response = await this.props.buyExtraMatch()
       this.setState({redirectUrl: response.buyExtraMatch})
@@ -34,28 +49,35 @@ export default class BuyExtraMatch extends React.Component {
     }
   }
 
-  renderMatchesToPlay() {
-    if (this.state.matchesToPlay) {
-      return (
-        <Text style={styles.details}>{`Tienes ${this.state.matchesToPlay} partidos disponibles`}</Text>
-      )
+  @autobind
+  onNavigationStateChange(event) {
+    if (event.url.indexOf('/voucher') > -1) {
+      this.setState({redirectUrl: '', message: `Tienes ${this.getMatchesToPlay()} Match extras vigentes`})
     }
   }
 
   @autobind
-  onNavigationStateChange(event) {
-    if (event.url.indexOf('/voucher') > -1) {
-      this.setState({redirectUrl: '', message: 'Tienes un nuevo partido disponible!'})
-    }
+  getMatchesToPlay() {
+    let totalMatches = 0
+    let today = moment()
+    const matchesToPlay = this.props.me.matchesToPlay || []
+    matchesToPlay.forEach((matchData, index) => {
+      if (today.isBefore(moment(matchData.dueDate))) {
+        totalMatches += matchData.amount
+      }
+    })
+    return totalMatches
   }
 
   render() {
     const {navigation} = this.props
+    const descriptionText = 'Si se te acabaron tus partidos, puedes adquirir otro por solo $5.500.\n\nPuedes comprar tantos como quieras!\n\nLos Matchs extras tienen una duración de 30 días.'
     if (!this.state.redirectUrl && !this.state.message) {
       return (
         <View style={styles.container}>
           <ImageTitle background={require('../FindMatch/imgs/titleImage.png')} title='Match Extra' />
-          <Text style={styles.details}>{'Si se te acabaron tus partidos, puedes adquirir otro por solo $5.500.\n\nPuedes comprar tantos como quieras!'}</Text>
+          <Text style={styles.extraMatches}>{`Tienes ${this.getMatchesToPlay()} Match extras vigentes`}</Text>
+          <Text style={styles.details}>{descriptionText}</Text>
           <Button
             style={styles.button}
             titleStyle={styles.buttonTitle}
@@ -69,7 +91,7 @@ export default class BuyExtraMatch extends React.Component {
         <View style={styles.container}>
           <ImageTitle background={require('../FindMatch/imgs/titleImage.png')} title='Match Extra' />
           <Text style={styles.newMatch}>{this.state.message}</Text>
-          <Text style={styles.details}>{'Si se te acabaron tus partidos, puedes adquirir otro por solo $5.500.\n\nPuedes comprar tantos como quieras!'}</Text>
+          <Text style={styles.details}>{descriptionText}</Text>
           <Button
             style={styles.button}
             titleStyle={styles.buttonTitle}
