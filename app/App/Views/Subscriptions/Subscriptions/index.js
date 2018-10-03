@@ -55,6 +55,16 @@ class Subscriptions extends React.Component {
             })
           }}
         />
+        <Capsule
+          title="Test Plan"
+          body="0 Costo"
+          bottom="2 matches mensuales"
+          onPress={() => {
+            navigation.navigate('PlanDescription', {
+              plan: {id: 'test', price: 0, name: 'Test'}
+            })
+          }}
+        />
         <View style={styles.bottom}>
           <Button style={{marginBottom: 10}} title="Atrás" onPress={() => logout(client)} />
           <BlueText onPress={() => navigation.navigate('PlanDetails')}>

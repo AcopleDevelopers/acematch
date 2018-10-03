@@ -8,8 +8,7 @@ export default class Footer extends React.Component {
     return (
       <div className={styles.container}>
         <strong>
-          © 2018 AceMatch. Todos los derechos reservados. Powered by Utips &
-          Orionsoft
+          © 2018 AceMatch. Todos los derechos reservados. Powered by Acople
         </strong>
       </div>
     )

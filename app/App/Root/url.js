@@ -1,1 +1,1 @@
-export default 'http://api.acematch.cl'
+export default 'https://api.acematch.cl'
