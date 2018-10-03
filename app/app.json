@@ -4,7 +4,8 @@
     "icon": "./icon.png",
     "version": "1.0.17",
     "slug": "acematch",
-    "sdkVersion": "27.0.0",
+    "sdkVersion": "30.0.0",
+    "entryPoint": "./App.js",
     "notification": {
       "icon": "./icon.png",
       "color": "#000000",
