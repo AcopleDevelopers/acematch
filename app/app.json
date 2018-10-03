@@ -2,7 +2,7 @@
   "expo": {
     "name": "AceMatch",
     "icon": "./icon.png",
-    "version": "1.0.17",
+    "version": "1.0.18",
     "slug": "acematch",
     "sdkVersion": "30.0.0",
     "entryPoint": "./App.js",
