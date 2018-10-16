@@ -19,7 +19,7 @@
     },
     "android": {
       "package": "com.acematch.app",
-      "versionCode": 15
+      "versionCode": 20
     }
   }
 }
